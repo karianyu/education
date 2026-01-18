@@ -42,8 +42,8 @@ router.beforeEach(async (to, from) => {
   const { student } = studentStore()
 
   if (!isLoggedIn) {
-    window.location.href = '/login'
-    return await next()
+    window.location.href = '/login?redirect=/student-portal'
+    return await next(false)
   }
 
   if (user.data.length === 0) {
