@@ -43,7 +43,7 @@ router.beforeEach(async (to, from) => {
 
   if (!isLoggedIn) {
     window.location.href = '/login'
-    return await next(true)
+    return await next()
   }
 
   if (user.data.length === 0) {
